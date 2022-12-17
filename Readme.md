@@ -51,7 +51,8 @@ npm start
 
 ## 사용한 프로젝트
 
-세마고등학교 물품관리 프로젝트 에서 응용
+[세마고등학교 물품관리 프로젝트 에서 응용](https://github.com/jinhuyk/semasicencedata-portfolio)
+
 
 ## 구현
 
