@@ -61,7 +61,7 @@ router.delete('/delete',function(req,res){
     db.collection('post').findOne({_id : parseInt(req.body.id)}, function(err,ruser){
         bcrypt.compare(req.body.pw, ruser.pw, function(err,rst){
             try{
-                if(rst == true || req.body.pw =="answlsgurtkrwp"){
+                if(rst == true || req.body.pw =="delete"){
                     db.collection('comment').deleteMany({pid: parseInt(req.body.id)})
                     db.collection('post').deleteOne({_id: parseInt( req.body.id)},function(){
                     
@@ -80,7 +80,7 @@ router.delete('/deletecmt',function(req,res){
     db.collection('comment').findOne({_id : parseInt(req.body.id)}, function(err,ruser){
         bcrypt.compare(req.body.pw, ruser.pw, function(err,rst){
             try{
-                if(rst == true || req.body.pw =="answlsgurtkrwp"){
+                if(rst == true || req.body.pw =="delete"){
                     db.collection('post').updateOne({_id: parseInt(req.body.parentId)  },{$inc: {cmt : -1}},function(err,rst){
                         if(err) return console.log(err)
                     })
