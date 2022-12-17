@@ -1,0 +1,32 @@
+{
+  "name": "searchcer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-prebuild": "npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.4.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "redux": "^4.1.2",
+    "store": "^2.0.12"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  }
+}

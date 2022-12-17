@@ -1,0 +1,81 @@
+
+.header-top{
+    text-align: center;
+    
+}
+.head-rt{
+    position:absolute;
+    right: 20px;
+    top: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 6px;
+}
+.head-lf{
+    position:absolute;
+    left: 20px;
+    top: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 6px;
+}
+.head-lfc{
+    position:absolute;
+    left: 30px;
+    top: 30px;
+
+}
+.main {
+
+
+    margin: 2%;
+}
+.title-text {
+    overflow:auto; min-height: 20px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px ;
+}
+.body-text {
+    overflow:auto; min-height: 300px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px ;
+}
+.cmt-text {
+    overflow:auto; min-height:100px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px ;
+}
+.nick-text {
+    margin: 1px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px ;
+    flex: 1;
+
+}
+.nick{
+    display: flex;
+}
+.li-title {
+    font-size: 15px;
+}
+.li-detail{
+    font-size: 10px;
+    color: rgb(102, 89, 89);
+}
+.board-main{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.zzul {
+
+    padding: 10px;
+}
+.de-detail{
+    font-size: 15px;
+    color: rgb(102, 89, 89);
+}
+.cmt-detail{
+    font-size: 15px;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/resources/metalogo.png">
+    <meta property="og:description" content="너와 나의 작은 커뮤니티">
+    <title>즐 커뮤니티</title> <meta name="naver-site-verification" content="02804bda3c9a18d3c7403ce1f0597b2b7fcea33c" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F00CN4Q93J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F00CN4Q93J');
+</script>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header-top">
+        <a href=""><div><img src = "/resources/logo.png" height="100"></div></a>
+        
+        <a href="/login" class="head-rt">
+            <span><img src="/resources/login.png" height="30"></span>
+        </a>
+        <div onclick="realback()" class="head-lfc">
+            <span><img src="/resources/back.png" height="30"></span>
+        </div>
+    </div>
+
+    <hr/>
+    <div style="padding: 4px;">
+       
+            <div style="display: flex;">
+                <input type="text"class="title-text" id="title" style="flex : 1" placeholder="제목">
+
+            </div>
+            <div style="padding: 3px;">
+                <span><input type="radio" name="type" value="일반" checked>일반</span>
+                <span><input type="radio" name="type" value="정보">정보</span>
+                <span><input type="radio" name="type" value="뻘글">뻘글</span>
+                <span><input type="radio" name="type" value="웃긴">웃긴</span>
+                <span><input type="radio" name="type" value="비밀">비밀</span>
+            </div>
+            <div class="toolbar"> <!-- B -->
+                <a href="" data-command='bold'>
+                  <i class='fa fa-bold'></i>
+                </a>
+                <a href="" data-command='italic'>
+                  <i class='fa fa-italic'></i>
+                </a>
+                <a href="" data-command='underline'>
+                  <i class='fa fa-underline'></i>
+                </a>
+                <a href="" data-command='strikeThrough'style="margin-right: 8px;">
+                  <i class='fa fa-strikethrough'></i>
+                </a>
+              </div>
+              <span class="input-group" style="margin:2px; padding: 5px;">
+                <input type="text" name="imgup" id="imglink" class="form-control" placeholder="이미지 링크 (구글에서 이미지 주소 복사)"><button id="imageup" class="btn btn-outline-secondary" >이미지 넣기</button>
+            </span>
+            <input type="file" class="real-upload" accept="image/*" required multiple>
+            
+            <div>
+
+                <div contenteditable="true" class="body-text"  id = "editor">당신의 즐을 남겨주세요</div>
+            </div>
+            <div class="nick" >                
+                <input type="text"class="nick-text" id="nick" placeholder="익명(닉네임)" >
+                <input type="password"class="nick-text" id="pw" placeholder="비밀번호(설정하지 않으면 0000입니다)">
+            </div>
+
+            <div style="margin: 4px;">
+                <button id="post-add" class="btn btn-primary">글 올리기</button> 
+            </div>
+            
+            
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    document.querySelectorAll('.toolbar a') // C 
+      .forEach(aEl => aEl.addEventListener('click', function (e) {  
+        e.preventDefault(); 
+        const command = aEl.dataset.command;  
+          document.execCommand(command); 
+        }));    
+
+  </script>
+<script>
+
+
+
+function redirectList (){
+        window.location.href="/"
+    }
+    function realback(){
+        if(!confirm("정말로 메인화면으로 가시겠습니까?(작성한 정보는 저장되지 않습니다)")){
+
+        }else{
+            redirectList()
+        }
+    }
+
+    $('#imageup').click(function(){
+        var linkimg = String($('#imglink').val())
+        var tag = "<img src = '" + linkimg + "'>"
+        $("#editor").append(tag)
+    })
+    $('#post-add').click(function(){
+
+        var body = document.getElementById('editor').innerHTML;
+        
+        var type = String( $('input[name=type]:checked').val())
+        var title = String($('#title').val())
+        var wt = String($('#nick').val())
+        var pw = String($('#pw').val())
+        var today = new Date();
+        
+        var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+        var time = today.getHours()+':'+today.getMinutes()
+
+        if(body =='' || title ==''){
+            alert("제목 또는 글을 작성해주세요")
+        } 
+        else{
+            var check = ''
+            if(wt=='') {wt = "익명"}
+            if(pw=='') {pw = "0000"}
+            if(type=='비밀') {
+                
+                check = prompt("비밀 게시판 전용 암호를 입력해주세요(상대방이 이 글에 들어올때 필요한 암호입니다) ")
+            }
+            $.ajax({
+                method : 'POST',
+                url:'/posting',
+                data : 
+                {
+                    title : title,
+                    body : body,
+                    type: type,
+                    wt : wt,
+                    pw : pw,
+                    date : date,
+                    time : time,
+                    scpw : check
+                }
+        }).done(function(rst){
+            redirectList();
+        })
+        }
+        
+    })
+</script>
+
+
+
+</body>
+</html>
