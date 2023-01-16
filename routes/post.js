@@ -127,7 +127,7 @@ router.post('/editing', function(req,res){
     
     
 })
-router.post('/posting',function(req,res){
+router.post('/post',function(req,res){
 
  
     bcrypt.hash(req.body.pw , 10 , function(err,rstpw){
