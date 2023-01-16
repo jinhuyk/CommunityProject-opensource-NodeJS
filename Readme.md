@@ -35,7 +35,7 @@ npm start
 
 - **배포 시 프로토 타입 사이트**
 
-[즐 커뮤니티](https://port-0-zzul-community-project-ngsnp25lbs5jgw7.gksl2.cloudtype.app/)
+[배포 사이트 연결](https://port-0-zzul-community-project-ngsnp25lbs5jgw7.gksl2.cloudtype.app/)
 
 ## 프로젝트 기획 배경
 
