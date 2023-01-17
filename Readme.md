@@ -1,8 +1,8 @@
-# 즐커뮤니티 개발(오픈소스)
+# 커뮤니티 제작 프로젝트 (오픈소스 사용가능)
 
-## 프로젝트 명
+## 프로젝트 이름
 
-즐커뮤니티 개발 
+커뮤니티 제작 프로젝트
 
 ## 기획 및 개발
 
@@ -19,6 +19,7 @@
 
 ## 배포
 
+
 - **MongoDB 에서 다음처럼 초기 값을 지정**
 
 ![Untitled](./images/Untitled.png)
@@ -26,6 +27,9 @@
 ![Untitled](./images/Untitled%201.png)
 
 해당 DB_URL 은 server.js, post.js, board.js, login.js 에 각각 넣어준다. 
+
+만약 database 명이 다를 경우에, 직접 코드 내에서 collection이나 database 이름 바꿔준 후 실행.
+DB URL은 인터넷 참고.
 
 - **실행**
 
