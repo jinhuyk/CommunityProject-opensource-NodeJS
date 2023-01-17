@@ -65,6 +65,19 @@ npm start
     3. login (계정 데이터베이스)
     4. post (글 저장 데이터베이스)
 
+- DB 연결방법
+    ```jsx
+    var router = require('express').Router();
+    const MongoClient = require('mongodb').MongoClient;
+    var db;
+    const DB_URL = ""
+    MongoClient.connect(DB_URL, function(err,client){
+        if(err) return console.log(err);
+        db = client.db('searchcer');
+    })
+    ```
+    다음 코드를 이용하여 자신이 원하는 DB에 접속할 수 있다. DB_URL은 해당 mongoDB에서 얻을 수 있다.
+
     다음처럼 각 데이터베이스 컬렉션에 접근이 가능하다.
     ```javascript
     app.get('/',function(req,res){
