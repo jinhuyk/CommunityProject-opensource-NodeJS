@@ -195,7 +195,7 @@ npm start
                 })
     ```
     
-- **말잇기(댓글) 기능 구현**
+- **말잇기(댓글) 기능 구현 **
     
     ![Untitled](./images/Untitled%205.png)
     
